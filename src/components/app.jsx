@@ -29,12 +29,16 @@ function App() {
 
     return <div>
         <Header />
-        <InputArea onClick={addNote} />
-        {
-            notes.map((noteItem, i) => {
-                return <Note key={i} id={i} title={noteItem.title} content={noteItem.content} onClick={deleteNote} />
-            })
-        }
+        <div className="container">
+            <InputArea onClick={addNote} />
+            <div className="notes-container">
+                {
+                    notes.map((noteItem, i) => {
+                        return <Note key={i} id={i} title={noteItem.title} content={noteItem.content} onClick={deleteNote} />
+                    })
+                }
+            </div>
+        </div>
 
         <Footer />
     </div>
